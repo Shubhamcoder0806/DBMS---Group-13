@@ -89,6 +89,32 @@ eliminating redundancy (e.g., restaurant details are never duplicated into
 in `OrderItem.unit_price` to avoid anomalies if a menu price later changes).
 
 ---
+## Functional Dependencies
+
+Customer:
+customer_id → customer_name, email, phone
+
+Restaurant:
+restaurant_id → restaurant_name, address
+
+MenuItem:
+item_id → item_name, price, restaurant_id
+
+Orders:
+order_id → customer_id, restaurant_id, order_date, total_amount, status
+
+OrderItem:
+order_item_id → order_id, item_id, quantity, unit_price
+
+Payment:
+payment_id → order_id, payment_method, payment_status
+
+DeliveryAgent:
+agent_id → agent_name, phone
+
+Delivery:
+delivery_id → order_id, agent_id, delivery_status
+
 
 ## 🔗 Entity Relationship Overview
 
